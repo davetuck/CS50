@@ -1,0 +1,21 @@
+2/3rds of CS students have never taken CS before.
+Basically everything is input -> XXX -> output.
+Computers typically speak in binary, 1s and 0s.
+  > 000 is 0 to a computer.  001 is 1.  010 is 2.  011 is 3.  100 is 4.  101 is 5.  110 is 6. 111 is 7.
+  > This basically works as the first column is 4, second is 2, and 3rd is 1.
+  > When you want to count higher than 7, you add a bit (which I'm guessing is an 8).
+
+How do computers represent letters?  Basically association between numbers and letters needed to be standardized and agreed upon.
+  > Humans decided to make 'A' the number 65.
+  > The translation from numbers to code is called ASCII (american standard code for information interchange)
+       128 64  32  16  8   4   2   1
+  65:  0   1   0   0   0   0   0   1  = 'A'
+  66:  0   1   0   0   0   0   1   0  = 'B'
+
+BUT how does a computer differentiate when you're referring to a letter rather than a number?
+  > different file types
+
+One Byte is equal to 8 Bits.  With one Byte, technically you can count all the way to 255, but there are 256 characters if you include 0.
+
+Unicode is a mapping of many more characters to include other language's characters, emojis, etc.
+> it might use backward compatibility 
