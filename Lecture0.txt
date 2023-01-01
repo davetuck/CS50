@@ -17,5 +17,70 @@ BUT how does a computer differentiate when you're referring to a letter rather t
 
 One Byte is equal to 8 Bits.  With one Byte, technically you can count all the way to 255, but there are 256 characters if you include 0.
 
-Unicode is a mapping of many more characters to include other language's characters, emojis, etc.
-> it might use backward compatibility 
+Unicode is a newer standard of mapping many more characters to include other language's characters, emojis, etc.
+> it might use 8 bits for backward compatibility to utilize ASCII.
+> it might also use 16 bits, which allows you to represent 65,000 symbols and letters.
+> it might also use 32 bits, which includes both letters and emojis.
+
+4,036,991,159 = 11110000 10011111 10011000 10110111
+Have you seen this on a phone, text, or an email?
+> it means 😷
+
+How would a computer represent a color?  
+> RGB: represents some amount of each of the primary colors to create any color.
+> First digit is red, second is green, and third is blue.
+
+Extended ASCII is when humans decided to add an 8th bit.  Now we're at 16 or 32 bits.
+
+Each individual pixel is utilizing 24 bits.  
+
+How would a computer represent a video using only binary?
+> Videos have a notion of time.  It's multiple images coming by per second.  
+> Music has the same representation for binary toward notes.  MIDI is the popular format for audio.
+
+Algorighm: step-by-step instructions for solving some problem.
+
+> an example of an algorithm is attempting to find a certain person's name within a phone book.
+  > the person searching could go page-by-page from the start, but that isn't the most efficient.
+    > this has a linear relationship to time vs scale, because as the phone book gets larger it takes more time.
+  > going two pages at a time might result in a bug, as the person they're searching for could be on an odd-numbered page.
+    > this has a n/2 relationship to the first algorithm, because (although flawed), the relationship to time is one half as long.  This one is flawed because it will require some doubling back.
+  > the solution proposed is to halve the book and see which side the person's name resides on.
+  > halve it again and continue this process until the page the person's name would be on is identified, and the algorithm will return whether the person is or is not listed.
+
+Pseudocode: not a specific coding or any language, it's just a way of expressing yourself in english or any human language, succinctly correctly toward and end of getting your idea for an algorithm across.
+  > pseudocode for the previous algorithm example
+    01  Pick up the phone book
+    02  Open to the middle of the phone book
+    03  Look at page
+    04  If person is on page
+    05    Call that person
+    06  Else if person is earlier in book
+    07    Open to middle of left half of the book
+    08    Go back to line 3
+    09  Else if person is later in book
+    10  Open to middle right half of the book
+    11    Go back to line 3
+    12  Else
+    13    Quit
+
+
+The problem ultimately with learning how to program, is they all look cryptic at first glance.
+
+Lots of different programming languages exist, but most of them have Functions.
+
+Functions: actions or verbs that solve some smaller problem.
+  > You might have a whole lot of functions that solve a bigger problem, because each function tends to do something that is very precise.
+  > "Pick up", "Open to", "Look at", "Call" (from the previous algorithm) are all examples of functions.
+
+Conditionals: things that you do conditionally, based on the answer to some question.
+  > Think of them kind of like forks in the road.
+  > "If", "Else if", and "Else" are examples of conditionals.
+
+Boolean expressions: whatever has a yes/no answers, aka true/false answers, aka 1/0 answers.
+  > "person is on page", "person is earlier in book", "person is later in book"
+
+Loops: some kind of cycle, some kind of directive that tells us to do something again and again.
+  > so that we don't need a 1,000-line program to search a 1,000 page phone book.
+  > you can use a 13 line program and repeat it inherently in order to solve some problem, until the last step is satisfied.
+
