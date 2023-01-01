@@ -1,0 +1,11 @@
+The goal is to not learn a specific language through this class, but instead that you've learned how to program.
+> unfortunately with a more traditional language, there's more distraction.
+
+Human language is more complex and involves more syntax than computer language.
+  However
+Computer language requires you to be more precise.  Code ultimately needs to be correct (which goes without saying).
+
+It's hard to become comfortable with the DESIGN of your code.
+
+Integrated Develop Environments (IDEs): aka text editors.
+> these are tools that programmers use to write code (VS Code).

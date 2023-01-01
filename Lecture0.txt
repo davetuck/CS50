@@ -84,3 +84,16 @@ Loops: some kind of cycle, some kind of directive that tells us to do something 
   > so that we don't need a 1,000-line program to search a 1,000 page phone book.
   > you can use a 13 line program and repeat it inherently in order to solve some problem, until the last step is satisfied.
 
+Scratch uses programming fundamentals that will be in C, JavaScript, and other languages.
+  > Scratch categorizes things by the type of thing they do
+  > it's brought in a way to where we don't have to worry about the distractions of syntax.
+
+For programmers, Events are things that happen and are often triggered by us humans.
+  > they are things that a program can listen for and respond to.
+
+A return value is what you get from a program when it asks a question and a human types in a response.
+
+Abstraction: creating your own blocks (in the example for Scratch) which do multiple things.  Simplifying a function down to one command which executes the entire function.
+  > when we created the Meow block in scratch from the previous 2 blocks (play sound "Meow" until done), and (wait 1 seconds).
+  >
+
