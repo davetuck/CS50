@@ -9,3 +9,9 @@ It's hard to become comfortable with the DESIGN of your code.
 
 Integrated Develop Environments (IDEs): aka text editors.
 > these are tools that programmers use to write code (VS Code).
+
+GUI: Graphical User Interface (basically the left side bar of VS code)
+CLI: Command Line Interface (terminal) this is what we will mostly be dealing with.
+  $ ./file (this pulls up any file in your current folder)
+  $ rm file (this removes the file named 'file')
+  $ ls (this shows all the files in your current folder, if you never want to use GUI)
