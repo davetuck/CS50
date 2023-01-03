@@ -31,3 +31,82 @@ C: string answer = get_string("What's your name? ");
 \n is a way of creating a new line so the C program compiler doesn't print $... on the end of your program.
   > / is an escape sequence
   > n is for a new line
+
+%s is a format code which serves as a placeholder.
+
+arguments and parameters are synonymous: they are inputs to a function.
+
+SCRATCH: when (green flag) clicked
+C: 
+  #include <stdio.h>  👈🏼 this is the library you've loaded, aka a Header File.  It's a menu of all the available funtions.
+  #include <cs50.h>
+
+  int main(void)
+  {
+    printf("Hello, world\n");
+  }
+
+cd : change directory
+  cd .. : change to parent folder
+  cd ../.. : change to grandparent folder
+cp : copy
+code filename.c : create a new file
+ls : list the items in the directory
+mkdir : make directory, aka create a new file
+mv : move, or rename
+rm : remove 
+rmdir : remove directory, aka remove a file
+./ : access the folder that's right here in this directory
+
+ctrl-L is the same as 'clear' in terminal.
+
+bool : true/false
+char : single character
+double : more numbers after the decimal point, something that is more precision
+float : real number (something with a decimal point in it)
+int : integer (numbers)
+long : bigger integer
+string : words
+
+CS50 library:
+get_char
+get_double
+get_float
+get_int
+get_long
+get_string
+
+Format Codes: (placeholders)
+%c : char
+%f : float or double
+%i : integer
+%li : long integer
+%s : string
+
+Operators:
++ : add
+- : subtract
+* : multiply
+/ : divide 
+% : remainder operator 
+
+Variables & Syntactic Sugar (ss):
+  >Syntactic Sugar : makes it easier to write fewer characters, but express your thoughts the same.
+
+  int counter = 0; (scratch: set counter to 0)
+  counter = counter + 1; (scratch: change counter by 1)
+    > ss: counter += 1;
+    > further ss: counter++; (can only do this with 1)
+
+First argument in printf HAS TO BE A STRING.
+
+With string, int, flow, char, use a finite number of bits.  With 32 bits you can count pretty high.
+  > 8 bits you can count as high as 256
+  > 32 bits gives you roughly 4 billion, which is the standard for mac and pc.
+  > using Long Integers (long, get_long, %li) gets you 64 bits which is still finite but much larger.
+
+Typically if something is wrapped with parenthesis, it's a function.  There are exceptions:
+  > The word "if" is not a function, it's a programming construct or feature of the C languages that uses parenthesis for a boolean expression (x > y)
+
+const tells the compiler that you can't change a variable.  It's common to capitalize const variables.
+  > Ex: cost int MINE = 2;
