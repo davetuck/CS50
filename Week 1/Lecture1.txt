@@ -18,3 +18,16 @@ CLI: Command Line Interface (terminal) this is what we will mostly be dealing wi
   $ rm = remove file (this removes the file named 'file')
   $ ls = list (this lists all the files in your current folder, if you never want to use GUI)
 
+SCRATCH: (hello, world) from scratch is 
+C: printf("hello, world"); in C
+  > C must have double quotes, not single
+
+SCRATCH: ask (What's your name) and wait; has an 'answer' bubble that writes in whatever the user inputs to the prompt
+C: string answer = get_string("What's your name? ");
+           👆🏼 this is the assignment operator, which means to store a value in a variable.  You read these right to left.  The value on the right is copied in to the value on the left.
+  > labeling it 'string' is telling the computer this is words
+  > 'int' would tell the computer this is numbers
+
+\n is a way of creating a new line so the C program compiler doesn't print $... on the end of your program.
+  > / is an escape sequence
+  > n is for a new line
