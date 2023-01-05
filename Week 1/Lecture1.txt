@@ -123,4 +123,4 @@ for loops are basically the same as while loops, but the conditions are all in t
 
 i is like your counter.  You don't want to use counter, just use i, but it represents the integer of whatever variable you're attempting to loop on.
 
-
+When you create a function, like meow.c, it has to be above the call of the function.  C reads top to bottom.  One workaround is to put the "void meow(void);" above everything else.  This is just for C, other programs will allow you to put your functions in any order.
