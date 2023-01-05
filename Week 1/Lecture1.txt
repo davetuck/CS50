@@ -110,3 +110,17 @@ Typically if something is wrapped with parenthesis, it's a function.  There are 
 
 const tells the compiler that you can't change a variable.  It's common to capitalize const variables.
   > Ex: cost int MINE = 2;
+
+If you find yourself copying and pasting code, there's a good chance you're probably doing something wrong.
+
+When asking the OR "||", you have to ask the same question on either side of it.
+
+Single quotes '' are used for single characters in char.  
+Double quotes "" are used for strings in str, even if there's only one character in the string but more applicable for entire words or multiple words.
+
+while loops are the same as the "forever (say meow)" in Scratch.  Variables in while loops are declared outside of the loop, which assumes it's going to continue to exist elsewhere in the program.
+for loops are basically the same as while loops, but the conditions are all in the parenthesis to the right of "for".  Most people would probably use for loops once comfortable with them.
+
+i is like your counter.  You don't want to use counter, just use i, but it represents the integer of whatever variable you're attempting to loop on.
+
+
