@@ -118,11 +118,12 @@ When asking the OR "||", you have to ask the same question on either side of it.
 Single quotes '' are used for single characters in char.  
 Double quotes "" are used for strings in str, even if there's only one character in the string but more applicable for entire words or multiple words.
 
-while loops are the same as the "forever (say meow)" in Scratch.  Variables in while loops are declared outside of the loop, which assumes it's going to continue to exist elsewhere in the program.
-for loops are basically the same as while loops, but the conditions are all in the parenthesis to the right of "for".  Most people would probably use for loops once comfortable with them.
-do while loops are similar to while loops, but it checks the condition last instead of first.
+WHILE loops are the same as the "forever (say meow)" in Scratch.  Variables in while loops are declared outside of the loop, which assumes it's going to continue to exist elsewhere in the program.
+FOR loops are basically the same as while loops, but the conditions are all in the parenthesis to the right of "for".  Most people would probably use for loops once comfortable with them.
+DO WHILE loops are similar to while loops, but it checks the condition last instead of first.
   > these are good when you want to do something no matter what first, and then check some condition or boolean expression.
   > they do nothing at first, then run once the set codition has been met
+  > if the "while" condition is satisfied, then the "do" will continue to run.  Once the "while" isn't satisfied, then the program moves on to the next lines of code.
 
 i is like your counter.  You don't want to use counter, just use i, but it represents the integer of whatever variable you're attempting to loop on.
 
@@ -138,4 +139,5 @@ Type Conversion:
 The next time the world might end is 19 January 2038, due to the amount of seconds since the "epoch" or January 1st, 1970, when computers came on to the scene.  
   > most computers were counting seconds with 32 bits, which gets us roughly 2 billion seconds.  2 billion seconds is going to happen in 2038.
   > the solution for this is more bits.  We're increasing to 64 bits, so it will be someone else's problem far in to the future.
-  > CHANGE JUST TO UPDATE GITHUB  
+
+
