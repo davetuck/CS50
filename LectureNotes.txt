@@ -452,3 +452,24 @@ Command Line
 
 Lecture 2
 
+  Clang = "C Language", which is the built in compiler utilized in the CS50 vs code program.
+    -> clang -o hello hello.c
+      -> creates a file called "a.out" for programs that don't require an additional library
+    -> this becomes tedious, because you have to type "clang hello.c -o hello -lcs50" to utilize the cs50 library 
+    -> "make" makes all this happen, this is just an explanation of what's happening
+    -> when you input "make hello", the program is called make, and the command line argument is hello (argument is what you pass in to the program).
+
+  Compiling is an oversimplification.  4 things are happening:
+    -> Preprocessing
+      -> these are the #include directives, called Preprocessor Directives, that we add at the top of C programs.
+      -> they're handled specially apart from the rest of your code.  The libararies are accessing these programs for functions we input:
+        -> get_string : string get_string(string prompt);
+        -> printf : int printf(string format, ...);
+    -> Compiling
+      -> to take code that looks like human syntax and convert it to assembly language.  There are many different types of (or flavors of) assembly language.
+      -> assembly language is about as low level as you can get to what a computer really understands before you start getting in to 0s and 1s.
+    -> Assembling
+    -> Linking
+
+  Arrays
+    -> 
