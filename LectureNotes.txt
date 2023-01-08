@@ -284,6 +284,171 @@ Things that are unique to C.
       }
       -> if the boolean-expression evaluates to true, all lines of code between the first set of curly braces will execute in order from top to bottom.
       -> if the boolean-expression evaluates to false, all lines of code between the second set of curly braces will execute in order from top to bottom.
+    
+    -> You can also create an if, else if, else chain with multiple else ifs in the middle.  As you would expect, each branch in the below chain is mutually exclusive.
+      if (boolean-expr1)
+      {
+        // first branch 
+      }
+      else if (boolean-expr2)
+      {
+        // second branch
+      }
+      else if (boolean-expr3)
+      {
+        // third branch
+      }
+      else 
+      {
+        // fourth branch
+      }
+    -> it is also possible to create a chain of non-mutually exclusive branches.
+    -> in the below example, only the third and fourth branches are mutually exclusive.  The else binds to the nearest if only.
+    -> say you satisfify the first and second condition and not the third, the program goes to the first, second, and fourth branch.
+    -> the else will bind to the nearest if.
+      if (boolean-expr1)
+      {
+        // first branch 
+      }
+      if (boolean-expr2)
+      {
+        // second branch
+      }
+      if (boolean-expr3)
+      {
+        // third branch
+      }
+      else 
+      {
+        // fourth branch
+      }
 
-      
+  -> switch() statement: a conditional statement that permits enumeration of distinct cases, instead of relying on Boolean expressions.  It's important to break; between each case, or you will "fall through" each case (unless that is the desired behavior).
+    -> Example:
+      int x = GetInt();  // not sure if they meant to put "get_int" here, but both ways generate an error in vscode.
+      switch(x)
+      {
+        case 1:
+          printf("One!\n");
+          break;
+        case 2:
+          printf("Two!\n");
+          break;
+        case 3:
+          printf("Three!\n");
+          break;
+        default:
+          printf("Sorry!\n");
+          break;
+      }
+
+  -> Ternary Operator (?:)
+    -> mostly a cute trick, the ternary operator (?:) is useful for writing trivially short conditional branches.  Be familiar with it, but know that you won't need to write it if you don't want to.
+    -> these two snippets of code act identically
+      int x;
+      if (expr)
+      {
+        x = 5;
+      }
+      else 
+      {
+        x = 6;
+      } 
+      👆🏼 same 👇🏼  // just a slicker way of writing it
+      int x = (boolean-expression) ? 5 : 6;  
+  
+Loops 
+  -> loops allow your programs to execute lines of code repeatedly, saving you from needing to copy and paste or otherwise repeat lines of code.
+  -> C provides a few different ways to implement loops in your programs, some of which likely look familiar from Scratch.
+  -> if you every have a program that's running continuously and will crash the browser, hit CTRL-C and it will stop.
+  -> loops are usually interchangeable, but it's good practice to use them specifically for the following:
+    -> while loop : use when you want to loop to repeat an unknown number of times, or possible not loop at all.
+      -> you might want to use this to run the control flow for a game. You might not know how long the user is going to be playing, but you want to keep doing the same thing (updating the various positions of sprites on the board, keeping things moving at all times).
+    -> do-while loop : use when you want a loop to repeat an uknown number of times, but at least once.
+      -> a common use case is prompting a user for input.  You might ask them for a positive integer, and if they give you a negative integer then the program will run again until they satisfy the false value of the boolean expression.
+    -> for loop : use when you want a loop to repeat a discrete number of times, though you may not know the number at the moment the program is compiled.
+      -> maybe you have a program where you prompt the user for a number, and they enter 100.  Then the program runs 100 times.  Or 1000, and then it runs 1000 times.  You don't know what the specific number of times is.
+
+
+  -> While Loops
+    -> infinite loop: the lines of code between the curly braces will execute repeatedly from top to bottom, until and unless we break out of it (as with a break; statement like we use in switch()), or otherwise kill our program.
+      while (true)
+      {
+
+      }
+    -> repeat until (from scratch): if the boolean expression evaluates to true, all lines of code between the curly braces will execute repeatedly, in order from top to bottom, until boolean-expression evaluates to false.
+      while (boolean-expression)
+      {
+
+      }
+  
+  -> Do While Loops: this loop will execute all lines of code between the curly braces once, and then, if the boolean-expression evaluates to true, will go back and repeat that process until boolean-expression evaluates to false.
+    do
+    {
+
+    }
+    while (boolean-expression);
+
+  -> For Loops: 
+    -> syntactically unattractive, but for loops are used to repeat the body of a loop a specified number of times, in this example 10.  
+    -> the process undertaken in a for loop is:
+      -> the counter variable(s) (here, i) is set
+      -> the Boolean expression is checked.
+        -> if it evaluates to true, the body of the loop executes
+        -> if it evaluates to false, the body of the loop does not execute.
+      -> the counter variable is incremented, and then the boolean expression is checked again, etc.
+    -> Example: 
+      for (int i = 0; i < 10; i++)
+      {
+
+      }
+      👆🏼AKA👇🏼
+      for (start; expr; increment)
+      {
+
+      }
+      1. the statement(s) in "start" are executed
+      2. the "expr" is checked
+        -> if it evaluates to true, the body of the loop executes
+        -> if it evaluates to false, the body of the loop does not execute;
+      3. the statement(s) in "increment" are executed, and then the "expr" is check again, etc.
+
+Command Line
+  GUI (graphical user interface) is utilizing your mouse to navigate your system.
+  Using the command line works with UNIX-based systems, it's a way to do the same things you'd do with your mouse but instead with the command line.
+  Commands:
+    -> ls : "list command", gives you a readout of all the files and folders in your current directory.
+    -> cd : "change directory", changes your current directory.  
+      -> The shorthand name for the current directory is .
+      -> The shorthand name for the parent directory is ..
+      -> The shorthand name for the grandparent directory is ../..
+      -> If you want to go back to the main directory, type cd and press enter (gets it back to where there's just a $)
+    -> pwd : "present working directory", shows you the folders where you're current directory is set to.
+    -> mkdir : "make directory", creates a new subdirectory located in the current directory. AKA, it's making a new folder.
+    -> cp : "copy", allows you to create a dupliacte of a file
+      -> cp <source> <destination> 
+        -> you're duplicating the file you specify as <source>, and it will save the file in <destination>
+      -> cp -r <source directory> <destination directory>
+        -> if you wish to copy ENTIRE directories, use this.  The -r stands for "recursive", and tells cp to dive down into the directory and copy everything inside of it (including any subdirectories it might contain).
+    -> rm : "remove", this will delete <file> after it asks you to confirm (y/n) you want to delete it.
+      -> rm -f <file> 
+        -> skips the file confirmation "forceably"
+      -> rm -r <directory>
+        -> deletes the entire directory
+      -> you can also combine the -r and -f flags in to -reference  
+        -> be careful, there's no undoing this!
+    -> mv : "move", allows you to effectively rename a file, moving it from <source> to <destination>.
+      -> this simplifies the process of duplicating a file that you've named wrongly and instead naming it rightly, then deleting the previous file.  It just renames it right away.
+    -> chmod
+    -> rmdir
+    -> sudo 
+    -> ln 
+    -> man 
+    -> clear 
+    -> touch 
+    -> diff 
+    -> telnet
+
+
+Lecture 2
 
