@@ -140,4 +140,47 @@ The next time the world might end is 19 January 2038, due to the amount of secon
   > most computers were counting seconds with 32 bits, which gets us roughly 2 billion seconds.  2 billion seconds is going to happen in 2038.
   > the solution for this is more bits.  We're increasing to 64 bits, so it will be someone else's problem far in to the future.
 
+SHORTS: 
+
+Things that are unique to C.
+  > You typically don't have to declare a variable type (integer, character, word(strings)).  In C you need to specify the data type of every variable we create.
+  
+  > Data Types and Variables :
+    > int
+      > the int data type is used for variables that will store integers.
+      > integers always take up 4 bytes of memory (32 bits).  This means the range of values they can store is necesarily limited to 32 bits worth of information.  This essentially means the range of integers we can store is from -2^31 - 2^31-1 (minus one because we have to leave room for zero).
+        > this is about negative 2 billion to positive 2 billion.
+      > unsigned int : 
+        > unsigned is a qualifier.  It modifies the data type slightly.  It can be applied to certain data types (including int), which effectively doubles the positive range of variables of that type, at the cost of disallowing any negative values.  (Approx 0 to 4 billion).
+        > you'll occasionally have use for unsigned variables in CS50.
+    
+    > char
+      > The char data type is used for variables that will store single characters.
+      > Characters always take up 1 byte of memore (8 bits).  This means the range of values is limited to 8 bits worth of information.  This means they can only fit values in the range of -2^7 (-128) and 2^7-1 (127)
+      > Thanks to ASCII, we've developed a mapping of characters like A, B, C, etc to numeric values in the positive sides of this range.
+        > "A" maps to the number 65.  "a" is 97.  The character 0 (not the number 0), is 48.
+
+    > float 
+      > the float data type is used for variables that will store floating-point values, also known as real numbers.
+      > floating point values always take up 4 bytes of memore (32 bits).
+      > it's a little complicated to describe the range of float, but suffice it to say with 32 bits of precision, some of which might be used for an integver part, we are limited in how precise we can be.
+      > what that means, is that if you have a repeating decimal place and a large integer place, you might not be able to be as precise.  That's the limitation of the float.
+    
+    > double
+      > like floats, the double data type is used for variables that will store floating-point values, also known as real numbers.
+      > the difference is that doubles are double precision.  They always take up 8 bytes of memory (64 bits).
+      > with an additional 32 bits of precision relative to a float, doubles allow us to specify much more precise real numbers.
+      > maybe we can hav pi to 30 places rather than pi to 7 places (like if we use a float).
+
+    > void 
+      > this is a type, but NOT a data type.
+      > functions can have a void return type, which just means they don't return a value.
+      > the parameter list of a function can also be void.  It simply means the function takes no parameters.
+      > for now, think of void more as a placeholder for "nothing".  It's more complex than taht, but this should suffice for the better part of the course.
+      > when typing int main(void), it's basically saying that main doesn't take any parameters.  There's no argument that gets passed in to main.  There is a way to pass arguments in to main, but so far what we've seen is main not taking any arguments.
+
+    > bool <cs50.h>
+      > used for variables that will store a Boolean value.  More precisely, they are capable only of storing one of two values: True and False.
+      > be sure to #include <cs50.h> atop you programs if you wish to usethe bool type.
+    
 
