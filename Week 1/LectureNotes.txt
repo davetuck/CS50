@@ -1,0 +1,267 @@
+The goal is to not learn a specific language through this class, but instead that you've learned how to program.
+-> unfortunately with a more traditional language, there's more distraction.
+
+Human language is more complex and involves more syntax than computer language.
+  However
+Computer language requires you to be more precise.  Code ultimately needs to be correct (which goes without saying).
+
+It's hard to become comfortable with the DESIGN of your code.
+
+Integrated Develop Environments (IDEs): aka text editors.
+-> these are tools that programmers use to write code (VS Code).
+
+GUI: Graphical User Interface (basically the left side bar of VS code)
+
+CLI: Command Line Interface (terminal) this is what we will mostly be dealing with.
+  $ make *filename* = compiling.  You have to do this before the output will be correct.  Compiling is the process of taking in source code and putting out machine code (binary).
+  $ ./file (this pulls up any file in your current folder)
+  $ rm = remove file (this removes the file named 'file')
+  $ ls = list (this lists all the files in your current folder, if you never want to use GUI)
+
+SCRATCH: (hello, world) from scratch is 
+C: printf("hello, world"); in C
+  -> C must have double quotes, not single
+
+SCRATCH: ask (What's your name) and wait; has an 'answer' bubble that writes in whatever the user inputs to the prompt
+C: string answer = get_string("What's your name? ");
+           👆🏼 this is the assignment operator, which means to store a value in a variable.  You read these right to left.  The value on the right is copied in to the value on the left.
+  -> labeling it 'string' is telling the computer this is words
+  -> 'int' would tell the computer this is numbers
+
+\n is a way of creating a new line so the C program compiler doesn't print $... on the end of your program.
+  -> / is an escape sequence
+  -> n is for a new line
+
+%s is a format code which serves as a placeholder.
+
+arguments and parameters are synonymous: they are inputs to a function.
+
+SCRATCH: when (green flag) clicked
+C: 
+  #include <stdio.h>  👈🏼 this is the library you've loaded, aka a Header File.  It's a menu of all the available funtions.
+  #include <cs50.h>
+
+  int main(void)
+  {
+    printf("Hello, world\n");
+  }
+
+cd : change directory
+  cd .. : change to parent folder
+  cd ../.. : change to grandparent folder
+cp : copy
+code filename.c : create a new file
+ls : list the items in the directory
+mkdir : make directory, aka create a new file
+mv : move, or rename
+rm : remove 
+rmdir : remove directory, aka remove a file
+./ : access the folder that's right here in this directory
+
+ctrl-L is the same as 'clear' in terminal.
+
+bool : true/false
+char : single character
+double : more numbers after the decimal point, something that is more precision
+float : real number (something with a decimal point in it)
+int : integer (numbers)
+long : bigger integer
+string : words
+
+CS50 library:  these are asking the user for an input in the terminal.
+get_char
+get_double
+get_float
+get_int
+get_long
+get_string
+
+Format Codes: (placeholders)
+%c : char
+%f : float or double
+%i : integer
+%li : long integer
+%s : string
+
+Operators:
++ : add
+- : subtract
+* : multiply
+/ : divide 
+% : remainder operator 
+
+Variables & Syntactic Sugar (ss):
+  -> Syntactic Sugar : makes it easier to write fewer characters, but express your thoughts the same.
+
+  int counter = 0; (scratch: set counter to 0)
+  counter = counter + 1; (scratch: change counter by 1)
+   -> ss: counter += 1;
+    -> further ss: counter++; (can only do this with 1)
+
+First argument in printf HAS TO BE A STRING.
+
+With string, int, flow, char, use a finite number of bits.  With 32 bits you can count pretty high.
+  -> 8 bits you can count as high as 256
+  -> 32 bits gives you roughly 4 billion, which is the standard for mac and pc.
+  -> using Long Integers (long, get_long, %li) gets you 64 bits which is still finite but much larger.
+
+Typically if something is wrapped with parenthesis, it's a function.  There are exceptions:
+  -> The word "if" is not a function, it's a programming construct or feature of the C languages that uses parenthesis for a boolean expression (x > y)
+
+const tells the compiler that you can't change a variable.  It's common to capitalize const variables.
+  -> Ex: cost int MINE = 2;
+
+If you find yourself copying and pasting code, there's a good chance you're probably doing something wrong.
+
+When asking the OR "||", you have to ask the same question on either side of it.
+
+Single quotes '' are used for single characters in char.  
+Double quotes "" are used for strings in str, even if there's only one character in the string but more applicable for entire words or multiple words.
+
+WHILE loops are the same as the "forever (say meow)" in Scratch.  Variables in while loops are declared outside of the loop, which assumes it's going to continue to exist elsewhere in the program.
+FOR loops are basically the same as while loops, but the conditions are all in the parenthesis to the right of "for".  Most people would probably use for loops once comfortable with them.
+DO WHILE loops are similar to while loops, but it checks the condition last instead of first.
+  -> these are good when you want to do something no matter what first, and then check some condition or boolean expression.
+  -> they do nothing at first, then run once the set codition has been met
+  -> if the "while" condition is satisfied, then the "do" will continue to run.  Once the "while" isn't satisfied, then the program moves on to the next lines of code.
+
+i is like your counter.  You don't want to use counter, just use i, but it represents the integer of whatever variable you're attempting to loop on.
+
+When you create a function, like meow.c, it has to be above the call of the function.  C reads top to bottom.  One workaround is to put the "void meow(void);" above everything else.  This is just for C, other programs will allow you to put your functions in any order.
+
+If you're only declaring a variable to return a value, you don't need the variable and you can simply put "return".
+
+Floating-point imprecision: refers to the inability for computers fundamentally to represent all possible real numbers in languages like C.
+  -> if you change from a float to an integer, you'll get zeros because int always wants to give back an integer.  This is known as truncation.
+
+Type Conversion: 
+
+The next time the world might end is 19 January 2038, due to the amount of seconds since the "epoch" or January 1st, 1970, when computers came on to the scene.  
+  -> most computers were counting seconds with 32 bits, which gets us roughly 2 billion seconds.  2 billion seconds is going to happen in 2038.
+  -> the solution for this is more bits.  We're increasing to 64 bits, so it will be someone else's problem far in to the future.
+
+SHORTS: 
+
+Things that are unique to C.
+  -> You typically don't have to declare a variable type (integer, character, word(strings)).  In C you need to specify the data type of every variable we create.
+  
+  -> Data Types and Variables :
+    -> int
+      -> the int data type is used for variables that will store integers.
+      -> integers always take up 4 bytes of memory (32 bits).  This means the range of values they can store is necesarily limited to 32 bits worth of information.  This essentially means the range of integers we can store is from -2^31 - 2^31-1 (minus one because we have to leave room for zero).
+        -> this is about negative 2 billion to positive 2 billion.
+      -> unsigned int : 
+        -> unsigned is a qualifier.  It modifies the data type slightly.  It can be applied to certain data types (including int), which effectively doubles the positive range of variables of that type, at the cost of disallowing any negative values.  (Approx 0 to 4 billion).
+        -> you'll occasionally have use for unsigned variables in CS50.
+    
+    -> char
+      -> The char data type is used for variables that will store single characters.
+      -> Characters always take up 1 byte of memore (8 bits).  This means the range of values is limited to 8 bits worth of information.  This means they can only fit values in the range of -2^7 (-128) and 2^7-1 (127)
+      -> Thanks to ASCII, we've developed a mapping of characters like A, B, C, etc to numeric values in the positive sides of this range.
+        -> "A" maps to the number 65.  "a" is 97.  The character 0 (not the number 0), is 48.
+
+    -> float 
+      -> the float data type is used for variables that will store floating-point values, also known as real numbers.
+      -> floating point values always take up 4 bytes of memore (32 bits).
+      -> it's a little complicated to describe the range of float, but suffice it to say with 32 bits of precision, some of which might be used for an integver part, we are limited in how precise we can be.
+      -> what that means, is that if you have a repeating decimal place and a large integer place, you might not be able to be as precise.  That's the limitation of the float.
+    
+    -> double
+      -> like floats, the double data type is used for variables that will store floating-point values, also known as real numbers.
+      -> the difference is that doubles are double precision.  They always take up 8 bytes of memory (64 bits).
+      -> with an additional 32 bits of precision relative to a float, doubles allow us to specify much more precise real numbers.
+      -> maybe we can hav pi to 30 places rather than pi to 7 places (like if we use a float).
+
+    -> void 
+      -> this is a type, but NOT a data type.
+      -> functions can have a void return type, which just means they don't return a value.
+      -> the parameter list of a function can also be void.  It simply means the function takes no parameters.
+      -> for now, think of void more as a placeholder for "nothing".  It's more complex than taht, but this should suffice for the better part of the course.
+      -> when typing int main(void), it's basically saying that main doesn't take any parameters.  There's no argument that gets passed in to main.  There is a way to pass arguments in to main, but so far what we've seen is main not taking any arguments.
+
+    -> bool <cs50.h>
+      -> used for variables that will store a Boolean value.  More precisely, they are capable only of storing one of two values: True and False.
+      -> be sure to #include <cs50.h> atop you programs if you wish to usethe bool type.
+    
+    -> string <cs50.h>
+      -> the string data type is used for variables that will store a series of characters, which programmers typically call a string.  These can be short, like a word or phrase, or long like a book.
+      -> strings include things such as words, sentences, paragraphs, and the like.
+      -> besure to #include <cs50.h> atop your programs if you wish to use this string type.
+
+    -> structs
+      -> allow you to group things like a variable and a string in to one unit.
+    
+    -> typedefs 
+      -> "defined types", which allow you to create your own data types.
+
+  -> Creating a variable:
+   -> 1st give it a type
+    -> 2nd give it a name (and a semi-colon at the end)
+    -> Examples:
+      int number;  (you've created a variable named "number", and it's capable of holding integer-type values)
+      char letter;  (you've created a variable named "letter", and it's capagle of holding single character-type values)
+  -> If you wish to create multiple variables of the same type, you specify the type name once, and then list as many variables of that type as you want.
+    -> Examples: 
+      -> int height, width;
+        -> this is the same as putting int height; AND int width; on separate lines.  Same with below.
+      -> float sqrt2, sqrt3, pi;
+    -> in general, it's good practice to only declare variables when you need them.  This has to do with scope.  It used to be standard to create all your variables at the top, but now it's better practice to create them when you're using them.  Likely because this makes it so someone reading your code can quickly see what it's in reference to.
+
+  -> Using a variable:
+    -> Declaring & Assigning: after a variable has been declared, it's no longer necessary to specify that variable's type.  (In fact, doing so has some unintended consequences!)
+      int number;  // declaration
+      number = 17; // assignment
+      char letter;  // declaration
+      letter = 'H'; // assignment
+    -> Initializing: if you are simlutaneously declaring and setting the value of a variable (sometimes called initializing), you can consolidate htis to one step.
+      int number = 17;  // initialization
+      char letter = 'H'; // initialization
+    
+  Operators in C 
+  -> Arithmetic Operators: in order to manipulate and work with variables and values in C, we have a number of operators at our disposal
+    -> +, -, *, /
+      int x = y + 1;
+      x = x * 5;
+
+    -> Modulus operator (%), which gives us the remainder when the number on the left of the operator is divided by the number on the right. This is basically the long-division operator, where a remainder is or isn't generated.  if nothing is returned, the remainder equals zero, if not, the remainder is returned.
+      int m = 13 % 4  // m is now 1
+      
+    -> C also provides a shorthand way to apply an arithmetic operator to a single variable.
+      x = x * 5;
+        👆🏼same👇🏼  (this trick works with all five basica arithmetic operators.)
+      x *= 5;
+      -> C provides a further shorthand for incrementing or decrementing a variable by 1.
+        x++;
+        x--;
+
+  -> Boolean Expressions: 
+    -> used in C for comparing values.  They evaluate to one of two possible values: True or False.  We can use the result of evaluating a Boolean expression in other programming constructs such as deciding which brand in a conditional to take, or determining whether a loop should continue to run.
+    -> sometimes when working with Boolean expressions, we will use variables of type bool, but we don't have to.
+    -> in C, EVERY non-zero value is equivalent to TRUE, and zero is FALSE.
+    -> two main types of Boolean expressions: logical operators and relational operators.
+      -> Logical Operators:
+        -> Logical AND (&&) is true if and only if BOTH operands are true, otherwise false.
+          true && true = true
+          true && false = false
+          false && true = false
+          false && false = false 
+        -> Logical OR (||) is true if and only if AT LEAST ONE operand is true, otherwise false.
+          true && true = true
+          true && false = true
+          false && true = true
+          false && false = false
+        -> Logical NOT (!) inverts the value of its operand.  Sometimes pronounced as "bang", "exclamation", or "not".
+          true = false
+          false = true
+      -> Relational Operators: these behave as you would expect them to, and appear syntactically similar to how you may recall them from elementary arithmetic.
+        -> > < >= <=
+          less than (x < y)
+          greater than (x > y)
+          less than or equal to (x <= y)
+          greater than or equal to (x >= y)
+        -> Equality and Inequality : be careful!  it's a common mistake to use the assignment operator (=) when you intend to use the equality operator (==).
+          Equality ( x == y)
+          Inequality (x != y)
+
+
+
