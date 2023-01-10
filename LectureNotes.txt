@@ -473,3 +473,6 @@ Lecture 2
 
   Arrays
     -> 
+
+
+I'm re-watching week zero since it's now switched to 2023.  Onward and upward!
