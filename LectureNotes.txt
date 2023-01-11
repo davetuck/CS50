@@ -475,6 +475,34 @@ Lecture 2
     -> 
 
 
-I'm re-watching week zero since it's now switched to 2023.  Onward and upward!
+Things that are new in 2023 (I missed some of them)
 
-I re-did mario, but I needed help doing so!
+The most numbers you can represent with 32 bits: 4,294,967,295
+  > typically half of these are negative, so the highest and lowest actual numbers most computers use is: 2,147,483,647 and -2,147,483,648 (remember that 0 counts here, that's why positive and negative are different).
+  > once you run out, you've experienced Integer Overflow
+The most numbers you can represent with 64 bits: 9,223,372,036,854,775,807 (9 Quintillion)
+
+Truncation: lose everything after the decimal point due to floating-point division errors.
+
+TypeCasting: convert one data type to another by explicitly telling the compiler that you want to do so.
+
+Magic Numbers: directly writing constants in to our code.  Essentially hard coding?
+  -> C provides a preprocessor directive (also called a macro) for creating symbolic constants.
+    #define NAME REPLACEMENT
+      -> At the time your program is compiled, #define goes through your code and replaces NAME with REPLACEMENT
+      -> DON'T put a semi-colon at the end of this.
+      -> If #include is similar to copy/paste, then #define is analogous to find/replace.
+    #define PI 3.14159265
+      -> At the time your program is compiled, #define goes through your code and replaces PI with 3.14159265.
+    #define COURSE "CS50"
+      -> #define goes through your code and replaces COURSE with "CS50".
+    -> Example:
+    #define DECKSIZE 52
+
+    card deal_cards(deck name)
+    {
+      for (int i = 0; i < DECKSIZE; i++)
+      {
+        // deal the card
+      }
+    }
