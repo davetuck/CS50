@@ -506,3 +506,5 @@ Magic Numbers: directly writing constants in to our code.  Essentially hard codi
         // deal the card
       }
     }
+
+    Holy moly credit is a doozey.
