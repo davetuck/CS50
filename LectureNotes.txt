@@ -508,3 +508,5 @@ Magic Numbers: directly writing constants in to our code.  Essentially hard codi
     }
 
     Holy moly credit is a doozey.
+
+    I've got to create a function somewhere.  I just don't know where quite yet.
