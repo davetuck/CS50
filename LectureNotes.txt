@@ -507,6 +507,7 @@ Magic Numbers: directly writing constants in to our code.  Essentially hard codi
       }
     }
 
-    Holy moly credit is a doozey.
-
-    I've got to create a function somewhere.  I just don't know where quite yet.
+    CREDIT was intense!  That ended up being a tough one.  Lessons learned were:
+      -> if you're trying to add a new function, you can't add it within int main(void) as that is a function itself.
+      -> the modulus operator is sick.  You can use it to iterate through long numbers by dividing the long number by 10 each time and taking the % 10 (which defines the last byte).
+      -> the more you stare at these, the easier they eventually become!
