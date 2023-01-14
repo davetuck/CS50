@@ -78,6 +78,7 @@ get_string
 
 Format Codes: (placeholders)
 %c : char
+%d : data
 %f : float or double
 %i : integer
 %li : long integer
