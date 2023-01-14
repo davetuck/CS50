@@ -511,3 +511,4 @@ Magic Numbers: directly writing constants in to our code.  Essentially hard codi
       -> if you're trying to add a new function, you can't add it within int main(void) as that is a function itself.
       -> the modulus operator is sick.  You can use it to iterate through long numbers by dividing the long number by 10 each time and taking the % 10 (which defines the last byte).
       -> the more you stare at these, the easier they eventually become!
+      -> I think I should try and make a loop out of the credit function somehow.  I don't know how yet though.  Let's give it a shot!
