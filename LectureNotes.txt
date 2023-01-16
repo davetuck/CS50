@@ -513,3 +513,98 @@ Magic Numbers: directly writing constants in to our code.  Essentially hard codi
       -> the modulus operator is sick.  You can use it to iterate through long numbers by dividing the long number by 10 each time and taking the % 10 (which defines the last byte).
       -> the more you stare at these, the easier they eventually become!
       -> I think I should try and make a loop out of the credit function somehow.  I don't know how yet though.  Let's give it a shot!
+
+
+
+
+Lecture Week 2
+
+Make is not actually a compiler.  It's a program that clearly makes your program, but it itself automates the process of using an actual compiler.
+  -> clang is an actual compiler
+  -> gcc is another compiler, been around for arguments
+
+Clang will compile code and create a file called "a.out".  You can use ./ to run this compiled code.
+  -> a.out is a historical name, refers to "assembler output".  It's the default file name that the compiler makes.
+
+Clang supports command line arguments.  
+  -> Command Line Arguments: unline an argument to a function, it's an additional word or key phrase that you type after your prompt in terminal that modifies the behavior of that command.
+  -> Compile code and rename the compiled code at the same time:
+          👇🏼output   👇🏼file you want to compile
+    clang -o hello hello.c -lcs50  👈🏼adding the library you're using that's not included in C
+    👆🏼compiler 👆🏼name of the compiled file
+      -> "-o" means the output.  There are numerous options like it.
+      -> "-lcs50" is the second step the compiler requires to load the specific library and utilize it.  Not necessary for built-in libraries.
+      -> "make" is what we'll use to automate this entire process.
+
+4 steps of Compiling: (this has been happening automatically thus far, converting source code to machine code.)
+  1. Preprocessing
+    -> lines of code that start with a # are preprocessor directives.  They are different than any other line, they should be analyzed initially before anything else is happening.
+    -> there's a folder someowhere on each system that's called "/usr/include".  It's a folder that contains cs50.h, stdio.h, and others.
+    -> similar to how we tease formulas prior to utilizing them in our program, the preprocessed lines are libraries of these type of formulas that are all teased and categorized in the <cs50.h> or <stdio.h> libraries.
+  2. Compiling
+    -> converting C to assembly code.  Assembly code is quite cryptic, and it's closer to what computers understand.
+    -> computers understand more arithmetic operations, and moving things in and out etc.
+  3. Assembling
+    -> this is where things get converted to machine code.  Assembly code is converted to actual 0s and 1s.
+    -> these aren't necessarily all the 0s and 1s to your program.  We need one final step.
+  4. Linking 
+    -> this combines the 0s and 1s that I wrote, with the 0s and 1s that the authors of <cs50.h> wrote, with the 0s and 1s that the <stdio.h> library, with the 0s and 1s of the original authors of C.
+    -> links them all together to create a massive blob of 0s and 1s.  
+
+Decompiling: reversing the process of compiling.  
+  -> If anyone on the internet is able to decompile their code, it might be easier to hack.
+  -> if your code is copyrighted, it's obnoxious that someone can see the original code that you wrote.
+  -> it's not predictable that you'll get the exact source code as there are multiple different ways to write source code for the same thing.
+  -> it's pretty challenging, time consuming, and costly to reverse engineeer the 0s and 1s.
+
+Debugging 
+  debug50: 
+    -> debugging is for when your code compiles and runs, yet you're not getting the output you're looking for.  You can go step by step through it to see what in tarnation is going wrong.
+    -> named after an actual moth that was causing problems for the Mark II.
+    -> great way to debug is to use printf to try and find out where your mistake is.
+    -> this can get messy and annoying.  Computer scientists have written software to make it easier to debug code, ie a debugger.
+    -> typically there are configuration files you have to include when running a debugger, but CS50 has made it easier by doing those configurations for us.
+    -> To Debug:
+      -> hover over the far right of VS Code where the red dots come up
+      -> Break Points: click on the red dot to make it brighter - this will tell your debugger to stop running the code there (kind of like a stop sign).
+        -> it's typically a good idea to set break points on function lines, and the debugger will set them to places where actual code is happening.
+      -> run "debug50 ./fileName"
+      -> see the continue, step over, step into, step out, restart, and stop buttons.
+        -> to continue one level through your code, press the step into button.
+
+  Rubber Duck Debugging: 
+    -> Talking through programs to see any illogical fallacies.
+
+
+Data Types Usage:
+ bool : 1 byte
+ int : 4 bytes
+ long : 8 bytes
+ float : 4 bytes
+ double : 8 bytes
+ char : 1 byte
+ string : ? bytes
+ ...
+
+ TypeCasting Example:
+  -> (float) 3 , it's almost like timesing a 3 by a float, but it changes 3 to 3.0.  This is imperfect, but it can do the trick for floats to not many decimal points.
+
+
+Array: 
+  -> a way of storing your data, back to back to back in a computers memory, in a way that you can access each individual member easily.
+  -> must start at 0.
+  -> declaring an array:
+    int variable[x];
+  -> how to tell C that a function takes an array 
+    float functionName(int array[]);
+  
+  Strings in Arrays 
+    -> when you use them, they automatically type "\0" as one additional character to define the end of the array.
+      -> technically \0 is 8 bits of 0, also equal to "null".
+    -> you don't need square brackets, a string is invariably an array that you can use square brackets to access.
+      -> ie (this prints HI!):
+        int main(void)
+        {
+          string s = "HI!";
+          printf("%c%c%c\n", s[0], s[1], s[2]);
+        }
