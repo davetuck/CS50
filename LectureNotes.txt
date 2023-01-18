@@ -774,6 +774,7 @@ Functions
         return addition;
       }
 
+  -> Calling a function: relatively easy as long as we give the function the type of values it's expecting.  This is why you name (int x, int y), so that the function knows to expect ints.
 
 
 
