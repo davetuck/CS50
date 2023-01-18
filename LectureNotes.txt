@@ -741,7 +741,25 @@ Functions
     -> example: 
 
       int add_two_ints(int a, int b);
+    
+    -> create an example of a function dictation for a number with decimal places:
 
-      float mult_two_floats(float x, float y);
+      float mult_two_reals(float x, float y);
+
+    -> if you want to me more precise, that is, have more decimal places which are accurate, you can use double:
+
+      double mult_two_reals(double x, double y);
+
+  -> Function Definition: the second step to creating a function is to define it.  This allows for predictable behavior when the function is called with inputs.
+    -> define mult_two_reals (the first one):
+
+      float mult_two_reals(float x, float y) 
+      {
+        float product = x * y;
+        return product;
+      }
+
+
+
 
     
