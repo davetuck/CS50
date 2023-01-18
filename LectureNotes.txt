@@ -599,6 +599,7 @@ Array:
     float functionName(int array[]);
   
   Strings in Arrays 
+    -> A string is technically an array of characters.
     -> when you use them, they automatically type "\0" as one additional character to define the end of the array.
       -> technically \0 is 8 bits of 0, also equal to "null".
     -> you don't need square brackets, a string is invariably an array that you can use square brackets to access.
@@ -608,3 +609,139 @@ Array:
           string s = "HI!";
           printf("%c%c%c\n", s[0], s[1], s[2]);
         }
+    -> to access specific characters within multiple strings, do this:
+      int main(void)
+      {
+        string words[2];
+
+        words[0] = "HI!";
+        words[1] = "BYE!";      👇🏼 string 0
+                                   👇🏼 char 0
+        printf("%c%c%c\n", words[0][0], words[0][1], words[0][2]);
+        printf("%c%c%c%c\n", words[1][0], words[1][1], words[1][2], words[1][3]);
+      }
+  
+  -> Arrays don't have the NULL character, but strings do.  Strings are special vs all the other data types thus far.
+  
+    -> here's how to manually get the length of a string:
+      int main(void)
+      {
+        string name = get_string("What's your name? ");
+
+        int n = 0;
+        while (name[n] != '\0')
+        {
+          n++;
+        }
+        printf("%i\n", n);
+      }
+    
+  -> #include <string.h> is a library of string-related functions.
+    -> strlen() : gets the length of a string, skips all the above steps.
+      int main(void)
+      {
+        string name = get_string("What's your name? ");
+        int n = strlen(name);
+        printf("%i\n", n);
+      }
+    
+Changing uppercase characters in a string to lower case and vise versa:
+  -> UPPER CASE & lower case are always 32 characters away from each other.
+  -> 'A' = 65, 'B' = 66
+  -> 'a' = 97, 'b' = 98
+  -> Example:
+    #include <cs50.h>
+    #include <stdio.h>
+    #include <string.h>
+
+    int main(void)
+    {
+      string s = get_string("Before: ");
+      printf("After:  ");
+      for (int i = 0; i < strlen(s); i++)
+      {
+        if (s[i] >= 'a' && s[i] <= 'z')  // 👈🏼 this is legit because the letters represent number, 'a' is 97, 'b' is 98, 'A' is 65, 'B' is 66.
+        {
+          printf("%c", s[i] - 32);
+        }
+        else
+        {
+          printf("%c", s[i]);
+        }
+      }
+      printf("\n");
+    }
+  
+  BUT YOU CAN WRITE THIS 👆🏼 AN EASIER WAY! 👇🏼
+
+  Add the library:
+  #include <ctype.h>
+  -> Example:
+  int main(void)
+  {
+    string s = get_string("Before: ");
+    printf("After:  ");               // this line is printing every time regardless, and then the next printf sits right beside it.
+    for (int i = 0, n = strlen(s); i < n; i++)   // you can declare another variable within this loop, "n = strlen(s);".  This makes it so you don't have to call strlen() again and again throughout the loop, since it's always the same within the one function (until you get_string a new string obviously).
+    {
+        printf("%c", toupper(s[i]));  // toupper() knows to change lower case -32 and leave upper case alone.
+    }
+    printf("\n");                     // this gets you on a new line as soon as you iterate through the previous code, so it doesn't print one letter per line.
+  }
+
+The two official formats for defining a main function:
+  int main(void) {}
+  int main(int argc, string argv[]) {}
+
+
+Fun Command Line Argument: 
+-> cowsay
+  cowsay moo
+  cowsay -f duck quack
+  cowsay -f dragon RAWR
+
+echo$? is a command line argument that shows you what your program is returning.
+  -> to get it to function properly, write "return 1" in the lines of code you write when you don't get what you want, and 0 when you get the correct one. 
+  -> example:
+    int main(int argc, string argv[])
+    {
+      if (argc <= 2)
+      {
+        printf("Missing additional command-line argument!  Type your whole name.  Now!\n");
+        return 1;
+      }
+      else if (argc > 3)
+      {
+        printf("Too many arguments!  That's not your name.  Type your name!\n");
+        return 1;
+      }
+      else
+      {
+        printf("Hello, %s %s\n", argv[1], argv[2]);
+        // you can omit "return 0;" here, because it's automatic.
+      }
+    }
+
+Cryptography: encryption and decryption (aka sending messages that you can't decode without the correct algorithm).
+  plaintext -> 
+                cipher -> cyphertext
+        key ->
+  -> an example is adding one to each letter, also called ceaser cipher, so each letter is one past the intended letter alphabetically.
+  
+
+Week 2 Shorts 
+
+Functions 
+  -> Function Declarations: these go on the top prior to defining the function to hint the compiler that they will be defined below and utilized throughout.
+
+    return-type name(argument-list);
+
+    -> return-type : what kind of variable the function will output
+    -> name : what you want to call your function (try to make it as descriptive as possible)
+    -> argument-list : the comma-separated set of inputs to your function, each of which has a type and a name.
+    -> example: 
+
+      int add_two_ints(int a, int b);
+
+      float mult_two_floats(float x, float y);
+
+    
