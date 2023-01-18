@@ -774,8 +774,15 @@ Functions
         return addition;
       }
 
-  -> Calling a function: relatively easy as long as we give the function the type of values it's expecting.  This is why you name (int x, int y), so that the function knows to expect ints.
+  -> Calling a function: 
+    -> simply pass it appropriate arguments (int requires an int, etc)
+    -> assign its return value to something of the correct type 
 
+  -> Function Miscellany
+    -> functions can sometimes take no inputs.  In that case, we declare the function as having a VOID ARGUMENT LIST.
+      -> main is an example of this.
+    -> functions sometimes do not have an output.  In that case, we declare the function as having a VOID RETURN TYPE.
 
+  
 
     
