@@ -753,10 +753,25 @@ Functions
   -> Function Definition: the second step to creating a function is to define it.  This allows for predictable behavior when the function is called with inputs.
     -> define mult_two_reals (the first one):
 
-      float mult_two_reals(float x, float y) 
+      float mult_two_reals(float x, float y)   <- (this is the input of the black box)
       {
-        float product = x * y;
-        return product;
+        float product = x * y;                 <- (this is within the black box)
+        return product;                        <- (this is the output of the black box)
+      }
+
+      You can simplify this 👆🏼 with this 👇🏼 
+
+        float mult_two_reals(float x, float y) 
+        {
+          return x * y;
+        }
+
+    Define add_two_ints(int a, int b);
+
+      int add_two_ints(int a, int b)
+      {
+        int addition = a + b;
+        return addition;
       }
 
 
