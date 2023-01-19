@@ -785,8 +785,35 @@ Functions
 
 
 Variables and Scope 
-  -> Scope is a characteristic of a variable that defines form which functions that variable may be accessed.
+  -> Scope is a characteristic of a variable that defines from which functions that variable may be accessed.
+
+  -Local vs Global Variables 
+
     -> Local variables can only be accessed within the functions in which they are created.
-    -> Global variables can be accessed by any function in the program.
+      -> Local variables are PASSED BY VALUE in function calls.  
+      -> Passed by value means the callee (the function that is receiving the variable) receives a copy of the passed variable, not the variable itself.
+      -> That means that the variable in the caller is unchanged unless overwritten.
+      -> Here's an example of how to manipulate a local variable within two functions:
+        int triple(int x);
+
+        int main(void)
+        {
+          int foo = 4;
+          foo = triple(foo);
+        }
+
+        int triple(int x)
+        {
+          return x *= 3;
+        }
+
+    -> Global variables can be accessed by any function in the program.  They are declared outside of all functions.
+      -> Global variables can be manipulated by one function, and that manipulation carries over to the next function or functions.
+
+  -> Things can get particularly insidious if the same variable name appears in multiple functions, which is perfectly okay as long as the variables exist in different scopes.
+
+
+Debugging ("Step Through")
+  -> run debug50 ./fileName 
 
     
