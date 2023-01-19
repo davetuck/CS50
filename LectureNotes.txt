@@ -841,5 +841,7 @@ Arrays
       -> the name is what you want to call your array
       -> the size is how many elements you would like your array to contain
 
+      TypeCasting
+
 
 
