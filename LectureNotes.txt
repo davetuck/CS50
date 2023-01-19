@@ -841,9 +841,55 @@ Arrays
       -> the name is what you want to call your array
       -> the size is how many elements you would like your array to contain
 
-      TypeCasting
+  -> To declare and initialize an array simultaneously, there is a special syntax that may be used to fill up the array with its starting values.
+    -> instantiation syntax:
 
-      TypeCasting
+      bool truthtable[] = { false, true, true };
+
+      -> note, you don't have to input the array size when you use the instantiation syntax, the compiler is able to count them up for you.
+
+    -> individual element syntax:
+
+      bool truthtable[3];
+      truthtable[0] = false;
+      truthtable[1] = true;
+      truthtable[2] = true;
+
+
+  -> Arrays can consist of more than a single dimension.  You can have as many size specifiers as you wish.
+    -> example:
+
+      bool battleship[10][10];
+
+      -> this gives you a 10x10 grid of cells.  In memory, thius is just a 100-element, one-dimensional array.
+      -> multi-dimensional arrays are great abstractions to help visualize game boards or other complex representations.
+
+  IMPORTANT 
+  -> While we can treat individual elements of arrays as variables, we cannot treat entire arrays themselves as variables.
+  -> We cannot, for instance, assign one array to another using the assignment operator (=).  That is not legal C.
+  -> Instead, we must use a loop to copy over the elements one at a time.
+  -> Arrays (unlike variables) do not follow the "passed by value" rule.  Instead, they are PASSED BY REFERENCE.  The callee receives the actual array, NOT its own local copy of it.
+
+
+Command Line Arguments:
+  -> most programs start like this:
+
+    int main(void)
+    {}
+  
+    -> we haven't had to modify main() due to the fact we've been collecting user input through in-program prompts.
+    -> if we want the user to provide data to our program before the program starts running, we need a new form.
+
+  -> To collect command-line arguments from the user, declare main as:
+
+    int main(int argc, string argv[])
+    {}          
+                👆🏼 integer   👆🏼 array of strings  These two special argumens enable you to know what data the user provided at the command line and how much data they provided.
+       
+       argc (argument count) : this integer-type variable will store the number of command-line arguments the user typed when the program was executed.
+        -> example
+          ./greedy              1 argument
+          ./greedy 1024 cs50    3 arguments
 
 
 
