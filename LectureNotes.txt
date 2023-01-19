@@ -814,6 +814,32 @@ Variables and Scope
 
 
 Debugging ("Step Through")
-  -> run debug50 ./fileName 
+  -> set a break point by pressing one of the red buttons to the left
+  -> run debug50 fileName 
 
-    
+Debugging ("Step In To")
+  -> same process as above
+  -> use the Step Into button (down arrow) to go within a function to see what's going on with the output.
+
+
+Arrays
+  -> a fundamental data structure, and they are extremely useful!
+  -> we use arrays to hold values of the same type at contiguous memory locations.  AKA it's a way we can group a bunch of integers together in memory or a bunch of characters or floats in memory, really close together, and work with them without giving each one it's own unique name.
+  -> one way to analogize the notion of array i to think of your local post office, which usually has a large bank of post office boxes.  Instead of post office boxes, arrays have elements, but they're the same idea.  Ways of grouping people's mail in one central location, and for arrays: grouping data in one central location.
+  -> variables of the same data type can be stored within an array (int, float, char, etc).
+  -> we can access each element of an array directly by the element's specific index number.
+  -> in C, elements of an array are indexed starting from 0. (this is a major reason we count from 0!)
+    -> if an array consists of n elements, the first element is located at index 0.  The last element is located at index (n-1).
+  -> C is very lenient.  It will not prevent you from going "out of bounds" of your array; be careful!
+    -> this is known as a "segmentation fault"
+
+ -> Array Declarations:
+
+    type name[size];
+
+      -> the type is what kind of variable each element of the array will be
+      -> the name is what you want to call your array
+      -> the size is how many elements you would like your array to contain
+
+
+
