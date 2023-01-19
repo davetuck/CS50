@@ -886,10 +886,21 @@ Command Line Arguments:
     {}          
                 👆🏼 integer   👆🏼 array of strings  These two special argumens enable you to know what data the user provided at the command line and how much data they provided.
        
-       argc (argument count) : this integer-type variable will store the number of command-line arguments the user typed when the program was executed.
+      argc (argument count) : this integer-type variable will store the number of command-line arguments the user typed when the program was executed.
         -> example
           ./greedy              1 argument
           ./greedy 1024 cs50    3 arguments
 
+      argv (argument vector aka array) : this array of strings stores, one string per element, the actual text the user typed at the command line when the program was executed.  
+        -> the first element of argv is always found at argv[0].  The last element of argv is always found at argv[argc-1].  This is because argc is the number of elements typed at the command line, and the array starts counting at 0.      
+        -> example:
+          
+          ./greedy 1024 cs50
+
+          argv indices        argv contents
+            argv [0]            "./greedy"
+            argv [1]              "1024"
+            argv [2]              "cs50"
+            argv [3]                ???        // this will likely give us a segmentation fault since it's overstepping our array.
 
 
