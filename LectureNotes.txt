@@ -783,6 +783,10 @@ Functions
       -> main is an example of this.
     -> functions sometimes do not have an output.  In that case, we declare the function as having a VOID RETURN TYPE.
 
-  
+
+Variables and Scope 
+  -> Scope is a characteristic of a variable that defines form which functions that variable may be accessed.
+    -> Local variables can only be accessed within the functions in which they are created.
+    -> Global variables can be accessed by any function in the program.
 
     
